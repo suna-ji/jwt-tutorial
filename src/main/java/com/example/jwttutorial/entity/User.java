@@ -14,12 +14,12 @@ import java.util.Set;
 @NoArgsConstructor
 public class User {
 
-    @Id
+    @Id // ID 직접할당
     @Column(name="user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(name="user_name", length = 50, unique = true)
+    @Column(name="user_name", length = 50, unique = true) // 글자 50자로 제한
     private String username;
 
     @Column(name="password", length = 100)
