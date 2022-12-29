@@ -26,10 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(
         TokenProvider tokenProvider,
         JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
-        JwtAccessDeniedHandler jwtAccessDeniedHandler,
+        JwtAccessDeniedHandler jwtAccessDeniedHandler
     ) {
         this.tokenProvider = tokenProvider;
-        this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint
+        this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
         this.jwtAccessDeniedHandler = jwtAccessDeniedHandler;
     }
 
