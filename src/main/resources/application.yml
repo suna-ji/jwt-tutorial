@@ -18,7 +18,19 @@ spring:
         format_sql: true
         show_sql: true
     defer-datasource-initialization: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          audiences:
+          issuer-uri:
 
 logging:
   level:
     com.example: DEBUG
+
+# HS512 알고리즘을 사용하기 때문에 Secret Key는 64Byte 이상이 되어야한다.
+jwt:
+  header: Authorization
+  secret: aGl0aGlzaXNqd3R0dXRvcmlhbHNlY3JldGtleXRoaXNpc2p3dHR1dG9yaWFsc2VjcmV0S2V5
+  token: 86400
