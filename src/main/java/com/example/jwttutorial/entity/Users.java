@@ -6,20 +6,20 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Users {
 
     @Id // ID 직접할당
     @Column(name="user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(name="user_name", length = 50, unique = true) // 글자 50자로 제한
+    @Column(name="username", length = 50, unique = true) // 글자 50자로 제한
     private String username;
 
     @Column(name="password", length = 100)
@@ -33,7 +33,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_authority"
+            name = "user_authority",
             joinColumns = {@JoinColumn(name="user_id", referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name="authority_name", referencedColumnName = "authority_name")})
     private Set<Authority> authorities;
